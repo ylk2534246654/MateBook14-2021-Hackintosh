@@ -1,6 +1,7 @@
 # MateBook14-2021-Hackintosh
 MateBook 14 2021款 i7 独显 16GB+512GB 触屏 (KLVD-WFE9)
-
+![展示图](./docs/zhanshi.png) 
+tips:装之前，慎重考虑，用着不流畅
 ### CPU
 * CPU 11th Gen Intel(R) Core(TM) i7-1165G7 @ 2.80GHz
 * 代号：Tiger Lake-U
