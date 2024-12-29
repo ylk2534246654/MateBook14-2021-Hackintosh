@@ -24,6 +24,7 @@ tips:装之前，慎重考虑，用着不流畅
 * OCABC: MAT support is 1
 
 ## Bios 设置
+*  [相关参考](docs/Section_PE32_image_SetupUtility_SetupUtility_body_IFR.txt)
 - Boot
   - Secure Boot Control : `Off`
 - Using RU.efi
