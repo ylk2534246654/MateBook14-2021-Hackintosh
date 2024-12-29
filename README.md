@@ -23,11 +23,14 @@ tips:装之前，慎重考虑，用着不流畅
 * MMIO：4261478400，4277141504
 * OCABC: MAT support is 1
 
-## Bios 参数指针
-* CFG Lock->CpuSetup:0x43
-* DVMT Total Gfx Mem->SaSetup:0x85
-* Primary Display->SaSetup:0xBA
-* CD Clock Frequency->SaSetup:0x47
+## Bios 设置
+- Boot
+  - Secure Boot Control : `Off`
+- Using RU.efi
+  - CpuSetup `(VarStore : 0x3)`
+    - CFG Lock `(Variable : 0x43)` : Disabled `(Value : 0x0)`
+  - SaSetup `(VarStore : 0x2)`
+    - DVMT Pre-Allocated `(Variable : 0x84)` : 64MB `(Value : 0x2)`
 
 ## 如果卡 EB 就将config.plist内的对应配置改成下面的
 * DevirtualiseMmio->false
