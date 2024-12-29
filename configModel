@@ -1,0 +1,748 @@
+{
+  "cpuType": "CpuType.intel",
+  "platformType": "PlatformType.laptop",
+  "plantformIndex": 7,
+  "macOSVersion": "Sequoia 15",
+  "pentiumOrCeleron": true,
+  "isCometLakeU62": false,
+  "deleteWhateverGreen": false,
+  "uefiSupport": true,
+  "soundCardType": "",
+  "alcid": 21,
+  "processorType": "ProcessorType.Type1537",
+  "customCPUName": "",
+  "brand": "Brand.nil",
+  "specialMainBoard": "SpecialMainBoard.nil",
+  "soundDriverType": "SoundDriverType.AppleALC",
+  "netWorkTypes": [],
+  "wifiTypes": [
+    "WiFiType.AirportItlwm_Ventura"
+  ],
+  "usbDriverType": "USBDriverType.USBToolBox",
+  "uefiQuirksType": "UEFIQuirksType.nil",
+  "utbMapPath": "C:\\Users\\25342\\Desktop\\UTBMap.kext",
+  "csrsetting": "CSRSETTING.CSRFF0F0000",
+  "optionalKexts": [
+    "OptionalKext.CpuTscSync",
+    "OptionalKext.CPUFriend_CPUFriendDataProvider"
+  ],
+  "optionalLaptopKexts": [
+    "OptionalLaptopKext.SMCBatteryManager",
+    "OptionalLaptopKext.VoodooPS2Controller_VoodooPS2ControllerVoodooInput_VoodooPS2ControllerVoodooPS2Keyboard_VoodooPS2ControllerVoodooPS2Mouse_VoodooPS2ControllerVoodooPS2Trackpad"
+  ],
+  "bootArgModels": [
+    {
+      "arg": "keepsyms=1",
+      "comment": "添加keepsyms=1引导参数,便于mac系统在发生内核崩溃时打印更多符号信息,有助于排查问题.此参数通常搭配debug=0x100使用(首次调试引导时,强烈建议勾选)"
+    },
+    {
+      "arg": "debug=0x100",
+      "comment": "添加debug=0x100引导参数,禁用macOS的看门狗功能,该功能有助于防止在内核崩溃时自动重启,便于获取一些有用的信息，并通过这些线索解决问题(首次调试引导时,强烈建议勾选)"
+    },
+    {
+      "arg": "amfi=0x80",
+      "comment": "禁用AMFI(添加amfi=0x80参数),相对比较新的显卡(比如HD4000及以上,GT710等开普勒核心以上)或者WiFi打驱动时,此参数适用.注意和amfi_get_out_of_my_way=0x1参数不要同时使用!"
+    },
+    {
+      "arg": "ipc_control_port_options=0",
+      "comment": "修复禁用AMFI(添加ipc_control_port_options=0参数)后部分应用(例如:百度网盘)闪退问题"
+    },
+    {
+      "arg": "-wegnoegpu",
+      "comment": "禁用独显(通常intel双显卡笔记本独立显卡【常见于N卡】无法驱动时,建议勾选)"
+    },
+    {
+      "arg": "alcid=21",
+      "comment": "声卡alcid"
+    }
+  ],
+  "iGPUHighLevelProperties": [],
+  "ryzenCPU": false,
+  "useRyzenGPU": false,
+  "usePrecastMMIO": false,
+  "amdmlb": "AMDMLB.nomal",
+  "amdCore": "4",
+  "acpi": {
+    "acpiAddItems": [
+      {
+        "Comment": "By RapidEFI",
+        "Enabled": true,
+        "Path": "SSDT-EC-USBX-LAPTOP.aml"
+      },
+      {
+        "Comment": "By RapidEFI",
+        "Enabled": true,
+        "Path": "SSDT-AWAC.aml"
+      },
+      {
+        "Comment": "By RapidEFI",
+        "Enabled": true,
+        "Path": "SSDT-PLUG.aml"
+      },
+      {
+        "Comment": "By RapidEFI",
+        "Enabled": true,
+        "Path": "SSDT-XOSI.aml"
+      },
+      {
+        "Comment": "By RapidEFI",
+        "Enabled": true,
+        "Path": "SSDT-PNLF.aml"
+      },
+      {
+        "Comment": "By RapidEFI",
+        "Enabled": true,
+        "Path": "SSDT-RHUB.aml"
+      }
+    ],
+    "acpiDeleteItems": [],
+    "acpiPatchItems": [
+      {
+        "Base": "",
+        "BaseSkip": 0,
+        "Comment": "_OSI to XOSI rename - requires SSDT-XOSI.aml",
+        "Count": 0,
+        "Enabled": true,
+        "Find": [
+          95,
+          79,
+          83,
+          73
+        ],
+        "Limit": 0,
+        "Mask": null,
+        "OemTableId": null,
+        "Replace": [
+          88,
+          79,
+          83,
+          73
+        ],
+        "ReplaceMask": null,
+        "Skip": 0,
+        "TableLength": 0,
+        "TableSignature": null
+      }
+    ],
+    "acpiQuirks": {
+      "FadtEnableReset": false,
+      "NormalizeHeaders": true,
+      "RebaseRegions": false,
+      "ResetHwSig": false,
+      "ResetLogoStatus": false,
+      "SyncTableIds": false
+    }
+  },
+  "booter": {
+    "booterMmioWhitelistItems": [],
+    "booterPatchItems": [],
+    "booterQuirks": {
+      "AllowRelocationBlock": false,
+      "AvoidRuntimeDefrag": true,
+      "DevirtualiseMmio": false,
+      "DisableSingleUser": false,
+      "DisableVariableWrite": false,
+      "DiscardHibernateMap": false,
+      "EnableSafeModeSlide": true,
+      "EnableWriteUnprotector": false,
+      "FixupAppleEfiImages": false,
+      "ForceBooterSignature": false,
+      "ForceExitBootServices": false,
+      "ProtectMemoryRegions": false,
+      "ProtectSecureBoot": false,
+      "ProtectUefiServices": true,
+      "ProvideCustomSlide": true,
+      "ProvideMaxSlide": 0,
+      "RebuildAppleMemoryMap": true,
+      "ResizeAppleGpuBars": -1,
+      "SetupVirtualMap": true,
+      "SignalAppleOS": false,
+      "SyncRuntimePermissions": true
+    }
+  },
+  "deviceProperties": {
+    "addList": [
+      {
+        "pciPath": "PciRoot(0x0)/Pci(0x2,0x0)",
+        "propertyItems": [
+          {
+            "key": "AAPL,GfxYTile",
+            "dataType": "data",
+            "value": "01000000",
+            "comment": "",
+            "display": false
+          },
+          {
+            "key": "AAPL,ig-platform-id",
+            "dataType": "data",
+            "value": "0000718A",
+            "comment": "暂不驱动核显完成安装(可以避免核显缓冲帧问题导致黑屏,内核崩溃问题)",
+            "display": false
+          },
+          {
+            "key": "AAPL,slot-name",
+            "dataType": "string",
+            "value": "Internal@0,2,0",
+            "comment": "",
+            "display": false
+          },
+          {
+            "key": "AAPL00,override-no-connect",
+            "dataType": "data",
+            "value": "00FFFFFF FFFFFF00 09E5060A 00000000 011F0104 A5221378 02211098 5C578C28 1B4E5300 00000101 01010101 01010101 01010101 0101B937 80DC7038 1F403020 350058C2 1000001A 00000000 00000000 00000000 00000000 001A0000 00FE0042 4F452031 380A2020 20202020 000000FE 004E4531 35364648 4D2D4E53 300A0026",
+            "comment": "",
+            "display": false
+          },
+          {
+            "key": "complete-modeset",
+            "dataType": "data",
+            "value": "01000000",
+            "comment": "",
+            "display": false
+          },
+          {
+            "key": "device-id",
+            "dataType": "data",
+            "value": "718A0000",
+            "comment": "",
+            "display": false
+          },
+          {
+            "key": "device_type",
+            "dataType": "string",
+            "value": "VGA compatible controller",
+            "comment": "",
+            "display": false
+          },
+          {
+            "key": "disable-agdc",
+            "dataType": "data",
+            "value": "01000000",
+            "comment": "",
+            "display": false
+          },
+          {
+            "key": "dpcd-max-link-rate",
+            "dataType": "data",
+            "value": "0A000000",
+            "comment": "",
+            "display": false
+          },
+          {
+            "key": "enable-cdclk-frequency-fix",
+            "dataType": "data",
+            "value": "01000000",
+            "comment": "",
+            "display": false
+          },
+          {
+            "key": "enable-dbuf-early-optimizer",
+            "dataType": "data",
+            "value": "01000000",
+            "comment": "",
+            "display": false
+          },
+          {
+            "key": "enable-dpcd-max-link-rate-fix",
+            "dataType": "data",
+            "value": "01000000",
+            "comment": "",
+            "display": false
+          },
+          {
+            "key": "enable-dvmt-calc-fix",
+            "dataType": "data",
+            "value": "01000000",
+            "comment": "",
+            "display": false
+          },
+          {
+            "key": "force-online",
+            "dataType": "data",
+            "value": "01000000",
+            "comment": "",
+            "display": false
+          },
+          {
+            "key": "framebuffer-patch-enable",
+            "dataType": "data",
+            "value": "01000000",
+            "comment": "",
+            "display": false
+          },
+          {
+            "key": "model",
+            "dataType": "string",
+            "value": "Intel Iris Xe Graphics",
+            "comment": "",
+            "display": false
+          }
+        ]
+      }
+    ],
+    "deleteList": []
+  },
+  "kernel": {
+    "kernelKexts": [
+      {
+        "BundlePath": "Lilu.kext",
+        "Comment": "By RapidEFI",
+        "Enabled": true,
+        "ExecutablePath": "Contents/MacOS/Lilu",
+        "PlistPath": "Contents/Info.plist",
+        "MinKernel": "",
+        "MaxKernel": "",
+        "Arch": "Any"
+      },
+      {
+        "BundlePath": "VirtualSMC.kext",
+        "Comment": "By RapidEFI",
+        "Enabled": true,
+        "ExecutablePath": "Contents/MacOS/VirtualSMC",
+        "PlistPath": "Contents/Info.plist",
+        "MinKernel": "",
+        "MaxKernel": "",
+        "Arch": "Any"
+      },
+      {
+        "BundlePath": "SMCProcessor.kext",
+        "Comment": "By RapidEFI",
+        "Enabled": true,
+        "ExecutablePath": "Contents/MacOS/SMCProcessor",
+        "PlistPath": "Contents/Info.plist",
+        "MinKernel": "",
+        "MaxKernel": "",
+        "Arch": "Any"
+      },
+      {
+        "BundlePath": "SMCSuperIO.kext",
+        "Comment": "By RapidEFI",
+        "Enabled": true,
+        "ExecutablePath": "Contents/MacOS/SMCSuperIO",
+        "PlistPath": "Contents/Info.plist",
+        "MinKernel": "",
+        "MaxKernel": "",
+        "Arch": "Any"
+      },
+      {
+        "BundlePath": "WhateverGreen.kext",
+        "Comment": "By RapidEFI",
+        "Enabled": true,
+        "ExecutablePath": "Contents/MacOS/WhateverGreen",
+        "PlistPath": "Contents/Info.plist",
+        "MinKernel": "",
+        "MaxKernel": "",
+        "Arch": "Any"
+      }
+    ],
+    "kernelBlockItems": null,
+    "kernelForceItems": null,
+    "kernelPatchItems": null,
+    "kernelEmulate": {
+      "Cpuid1Data": [
+        85,
+        6,
+        10,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "Cpuid1Mask": [
+        255,
+        255,
+        255,
+        255,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "DummyPowerManagement": false,
+      "MaxKernel": "",
+      "MinKernel": ""
+    },
+    "kernelQuirks": {
+      "AppleCpuPmCfgLock": false,
+      "AppleXcpmCfgLock": false,
+      "AppleXcpmExtraMsrs": true,
+      "AppleXcpmForceBoost": false,
+      "CustomSMBIOSGuid": false,
+      "CustomPciSerialDevice": false,
+      "DisableIoMapper": true,
+      "DisableIoMapperMapping": false,
+      "DisableLinkeditJettison": true,
+      "DisableRtcChecksum": false,
+      "ExtendBTFeatureFlags": false,
+      "ExternalDiskIcons": false,
+      "ForceAquantiaEthernet": false,
+      "ForceSecureBootScheme": false,
+      "IncreasePciBarSize": false,
+      "LapicKernelPanic": false,
+      "LegacyCommpage": false,
+      "PanicNoKextDump": true,
+      "PowerTimeoutKernelPanic": true,
+      "ProvideCurrentCpuInfo": false,
+      "SetApfsTrimTimeout": -1,
+      "ThirdPartyDrives": true,
+      "XhciPortLimit": true
+    },
+    "kernelScheme": {
+      "CustomKernel": false,
+      "FuzzyMatch": true,
+      "KernelArch": "Auto",
+      "KernelCache": "Auto"
+    }
+  },
+  "misc": {
+    "MiscBoot": {
+      "ConsoleAttributes": 0,
+      "HibernateMode": "None",
+      "HibernateSkipsPicker": false,
+      "HideAuxiliary": true,
+      "InstanceIdentifier": "",
+      "LauncherOption": "Disabled",
+      "LauncherPath": "Default",
+      "PickerAttributes": 145,
+      "PickerAudioAssist": false,
+      "PickerMode": "External",
+      "PickerVariant": "Acidanthera\\GoldenGate",
+      "PollAppleHotKeys": true,
+      "ShowPicker": true,
+      "TakeoffDelay": 0,
+      "Timeout": 30
+    },
+    "MiscDebug": {
+      "AppleDebug": false,
+      "ApplePanic": false,
+      "DisableWatchDog": false,
+      "DisplayDelay": 0,
+      "DisplayLevel": 2147483650,
+      "LogModules": "*",
+      "SysReport": false,
+      "Target": 3
+    },
+    "MiscSecurity": {
+      "AllowSetDefault": true,
+      "ApECID": 0,
+      "AuthRestart": false,
+      "BlacklistAppleUpdate": true,
+      "DmgLoading": "Any",
+      "EnablePassword": false,
+      "ExposeSensitiveData": 6,
+      "HaltLevel": 2147483648,
+      "PasswordHash": null,
+      "PasswordSalt": null,
+      "ScanPolicy": 0,
+      "SecureBootModel": "Disabled",
+      "Vault": "Optional"
+    },
+    "MiscToolsItems": [
+      {
+        "Arguments": "",
+        "Auxiliary": true,
+        "Comment": "Uefi Shell Tool",
+        "Enabled": true,
+        "Flavour": "OpenShell:UEFIShell:Shell",
+        "FullNvramAccess": false,
+        "Name": "UEFI Shell",
+        "Path": "OpenShell.efi",
+        "RealPath": false,
+        "TextMode": false
+      }
+    ]
+  },
+  "nvram": {
+    "LegacyOverwrite": false,
+    "WriteFlash": true,
+    "Add": {
+      "addList": {
+        "4D1EDE05-38C7-4A6A-9CC6-4BCCA8B38C14": [
+          {
+            "key": "DefaultBackgroundColor",
+            "dataType": "data",
+            "value": "00000000",
+            "comment": ""
+          }
+        ],
+        "4D1FDA02-38C7-4A6A-9CC6-4BCCA8B30102": [
+          {
+            "key": "rtc-blacklist",
+            "dataType": "data",
+            "value": "",
+            "comment": ""
+          },
+          {
+            "key": "revcpu",
+            "dataType": "integer",
+            "value": "1",
+            "comment": ""
+          }
+        ],
+        "7C436110-AB2A-4BBB-A880-FE41995C9F82": [
+          {
+            "key": "ForceDisplayRotationInEFI",
+            "dataType": "integer",
+            "value": "0",
+            "comment": ""
+          },
+          {
+            "key": "SystemAudioVolume",
+            "dataType": "data",
+            "value": "46",
+            "comment": ""
+          },
+          {
+            "key": "boot-args",
+            "dataType": "string",
+            "value": "keepsyms=1 debug=0x100 amfi=0x80 ipc_control_port_options=0 -wegnoegpu alcid=21",
+            "comment": ""
+          },
+          {
+            "key": "csr-active-config",
+            "dataType": "data",
+            "value": "FF0F0000",
+            "comment": ""
+          },
+          {
+            "key": "prev-lang:kbd",
+            "dataType": "data",
+            "value": "7A682D48616E733A323532",
+            "comment": ""
+          },
+          {
+            "key": "run-efi-updater",
+            "dataType": "string",
+            "value": "No",
+            "comment": ""
+          },
+          {
+            "key": "bluetoothExternalDongleFailed",
+            "dataType": "data",
+            "value": "00",
+            "comment": ""
+          },
+          {
+            "key": "bluetoothInternalControllerInfo",
+            "dataType": "data",
+            "value": "0000000000000000000000000000",
+            "comment": ""
+          }
+        ]
+      }
+    },
+    "Delete": {
+      "deleteList": {
+        "4D1EDE05-38C7-4A6A-9CC6-4BCCA8B38C14": [
+          {
+            "value": "DefaultBackgroundColor"
+          }
+        ],
+        "4D1FDA02-38C7-4A6A-9CC6-4BCCA8B30102": [
+          {
+            "value": "rtc-blacklist"
+          }
+        ],
+        "7C436110-AB2A-4BBB-A880-FE41995C9F82": [
+          {
+            "value": "forceDisplayRotationInEFI"
+          },
+          {
+            "value": "boot-args"
+          },
+          {
+            "value": "csr-active-config"
+          }
+        ]
+      }
+    },
+    "LegacySchema": {}
+  },
+  "platformInfo": {
+    "Automatic": true,
+    "CustomMemory": false,
+    "UpdateDataHub": true,
+    "UpdateNVRAM": true,
+    "UpdateSMBIOS": true,
+    "UseRawUuidEncoding": false,
+    "UpdateSMBIOSMode": "Custom",
+    "Generic": {
+      "AdviseFeatures": false,
+      "MLB": "C02105403QXP8PG8C",
+      "MaxBIOSVersion": false,
+      "ProcessorType": 1537,
+      "ROM": [
+        51,
+        51,
+        51,
+        51,
+        51,
+        51
+      ],
+      "SpoofVendor": false,
+      "SystemMemoryStatus": "Auto",
+      "SystemProductName": "MacBookPro16,2",
+      "SystemSerialNumber": "C02F6SYTML7H",
+      "SystemUUID": "EDDCFD1C-86AF-48E2-A779-57F4DB9CBDCB",
+      "comment": "支持macOS Catalina 10.15 ~ macOS Sequoia 15"
+    }
+  },
+  "uefi": {
+    "ConnectDrivers": true,
+    "uefiApfs": {
+      "EnableJumpstart": true,
+      "GlobalConnect": false,
+      "HideVerbose": true,
+      "JumpstartHotPlug": false,
+      "MinDate": -1,
+      "MinVersion": -1
+    },
+    "uefiAppleInput": {
+      "AppleEvent": "Builtin",
+      "CustomDelays": false,
+      "GraphicsInputMirroring": true,
+      "KeyInitialDelay": 50,
+      "KeySubsequentDelay": 5,
+      "PointerDwellClickTimeout": 0,
+      "PointerDwellDoubleClickTimeout": 0,
+      "PointerDwellRadius": 0,
+      "PointerPollMask": -1,
+      "PointerPollMax": 80,
+      "PointerPollMin": 10,
+      "PointerSpeedDiv": 1,
+      "PointerSpeedMul": 1
+    },
+    "uefiAudio": {
+      "AudioCodec": 0,
+      "AudioDevice": "PciRoot(0x0)/Pci(0x1b,0x0)",
+      "AudioOutMask": 1,
+      "AudioSupport": false,
+      "DisconnectHda": false,
+      "MaximumGain": -15,
+      "MinimumAssistGain": -30,
+      "MinimumAudibleGain": -55,
+      "PlayChime": "Auto",
+      "ResetTrafficClass": false,
+      "SetupDelay": 0
+    },
+    "uefiDriversItems": [
+      {
+        "Arguments": "",
+        "Comment": "By RapidEFI",
+        "Enabled": true,
+        "LoadEarly": false,
+        "Path": "OpenHfsPlus.efi"
+      },
+      {
+        "Arguments": "",
+        "Comment": "By RapidEFI",
+        "Enabled": true,
+        "LoadEarly": false,
+        "Path": "OpenRuntime.efi"
+      },
+      {
+        "Arguments": "",
+        "Comment": "By RapidEFI",
+        "Enabled": true,
+        "LoadEarly": false,
+        "Path": "OpenCanopy.efi"
+      },
+      {
+        "Arguments": "",
+        "Comment": "By RapidEFI",
+        "Enabled": true,
+        "LoadEarly": false,
+        "Path": "ResetNvramEntry.efi"
+      }
+    ],
+    "uefiInput": {
+      "KeyFiltering": false,
+      "KeyForgetThreshold": 5,
+      "KeySupport": true,
+      "KeySupportMode": "Auto",
+      "KeySwap": false,
+      "PointerSupport": true,
+      "PointerSupportMode": "ASUS",
+      "TimerResolution": 50000
+    },
+    "uefiOutput": {
+      "ClearScreenOnModeSwitch": false,
+      "ConsoleFont": "",
+      "ConsoleMode": "Max",
+      "DirectGopRendering": false,
+      "ForceResolution": false,
+      "GopBurstMode": false,
+      "GopPassThrough": "Disabled",
+      "IgnoreTextInGraphics": false,
+      "InitialMode": "Auto",
+      "ProvideConsoleGop": true,
+      "ReconnectGraphicsOnConnect": false,
+      "ReconnectOnResChange": false,
+      "ReplaceTabWithSpace": false,
+      "Resolution": "Max",
+      "SanitiseClearScreen": false,
+      "TextRenderer": "BuiltinGraphics",
+      "UgaPassThrough": false,
+      "UIScale": 0
+    },
+    "uefiProtocolOverrides": {
+      "AppleAudio": false,
+      "AppleBootPolicy": false,
+      "AppleDebugLog": false,
+      "AppleEg2Info": false,
+      "AppleFramebufferInfo": false,
+      "AppleImageConversion": false,
+      "AppleImg4Verification": false,
+      "AppleKeyMap": false,
+      "AppleRtcRam": false,
+      "AppleSecureBoot": false,
+      "AppleSmcIo": false,
+      "AppleUserInterfaceTheme": false,
+      "DataHub": false,
+      "DeviceProperties": false,
+      "FirmwareVolume": true,
+      "HashServices": false,
+      "OSInfo": false,
+      "PciIo": false,
+      "UnicodeCollation": false
+    },
+    "uefiQuirks": {
+      "ActivateHpetSupport": true,
+      "DisableSecurityPolicy": false,
+      "EnableVectorAcceleration": true,
+      "EnableVmx": false,
+      "ExitBootServicesDelay": 0,
+      "ForceOcWriteFlash": false,
+      "ForgeUefiSupport": false,
+      "IgnoreInvalidFlexRatio": false,
+      "ReleaseUsbOwnership": false,
+      "ReloadOptionRoms": false,
+      "RequestBootVarRouting": true,
+      "ResizeGpuBars": -1,
+      "ResizeUsePciRbIo": false,
+      "ShimRetainProtocol": false,
+      "TscSyncTimeout": 0,
+      "UnblockFsConnect": false
+    },
+    "uefiReservedMemory": {
+      "ReservedMemory": []
+    }
+  }
+}
